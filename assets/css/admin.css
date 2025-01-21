@@ -1,0 +1,349 @@
+/* Modal Styles */
+.jcf-modal {
+    display: none;
+    position: fixed;
+    z-index: 999999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.jcf-modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    height: 80vh;
+    overflow: auto;
+}
+
+.jcf-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #666;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.jcf-modal-close:hover {
+    color: #000;
+}
+
+/* Form Styles */
+.jcf-field-row {
+    margin-bottom: 20px;
+}
+
+.jcf-field-row label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #23282d;
+}
+
+.jcf-field-row input[type="text"],
+.jcf-field-row select,
+.jcf-field-row textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.07);
+}
+
+.jcf-field-row input[type="text"]:focus,
+.jcf-field-row select:focus,
+.jcf-field-row textarea:focus {
+    border-color: #2271b1;
+    box-shadow: 0 0 0 1px #2271b1;
+    outline: 2px solid transparent;
+}
+
+/* Conditions Section */
+.field-conditions {
+    border: 1px solid #e2e4e7;
+    padding: 20px;
+    margin-top: 10px;
+    background: #fff;
+    max-height: 300px;
+    overflow-y: auto;
+    border-radius: 4px;
+}
+
+.field-conditions h4 {
+    margin: 0 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    color: #1d2327;
+    font-size: 14px;
+}
+
+.condition-checkbox {
+    display: block;
+    margin: 8px 0;
+    padding: 5px 0;
+}
+
+.condition-checkbox:hover {
+    background-color: #f8f9fa;
+}
+
+.condition-checkbox input[type="checkbox"] {
+    margin-right: 8px;
+    border-color: #8c8f94;
+}
+
+/* Field Options Section */
+.field-options {
+    display: none;
+    border: 1px solid #e2e4e7;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+
+.option-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.option-row input {
+    flex: 1;
+}
+
+.remove-option {
+    color: #cc1818;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.add-option {
+    margin-top: 10px;
+}
+
+/* Table Styles */
+.wp-list-table .column-title {
+    width: 25%;
+}
+
+.wp-list-table .column-slug {
+    width: 15%;
+}
+
+.wp-list-table .column-type {
+    width: 10%;
+}
+
+.wp-list-table .column-description {
+    width: 30%;
+}
+
+.wp-list-table .column-location {
+    width: 20%;
+}
+
+/* Loading Overlay */
+.jcf-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+    font-size: 1.2em;
+}
+
+.jcf-loading::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border: 3px solid #2271b1;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Messages */
+.jcf-notice {
+    margin: 15px 0;
+    padding: 12px;
+    border-left: 4px solid;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+}
+
+.jcf-notice-success {
+    border-left-color: #00a32a;
+}
+
+.jcf-notice-error {
+    border-left-color: #d63638;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 782px) {
+    .jcf-modal-content {
+        margin: 20px;
+        padding: 20px;
+        width: auto;
+    }
+
+    .field-conditions {
+        max-height: 200px;
+    }
+
+    .option-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+.jcf-color-field-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.jcf-color-field-wrapper input[type="color"] {
+    width: 50px;
+    height: 30px;
+    padding: 0;
+    border: 1px solid #8c8f94;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.jcf-color-value {
+    font-size: 13px;
+    background: #f0f0f1;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.options-container {
+    margin-bottom: 15px;
+}
+
+.option-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.option-row input {
+    flex: 1;
+}
+
+.remove-option {
+    color: #cc1818;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.remove-option:hover {
+    color: #a00;
+}
+
+.add-option {
+    margin-top: 10px;
+}
+
+/* Ajustes para los inputs de opciones */
+.option-value,
+.option-label {
+    width: calc(50% - 20px) !important;
+}
+
+/* Estilos para el repeater */
+.jcf-repeater-field {
+    margin: 15px 0;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+}
+
+.jcf-repeater-items {
+    margin-bottom: 15px;
+}
+
+.repeater-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.repeater-item:hover {
+    border-color: #2271b1;
+}
+
+.repeater-item-content {
+    flex: 1;
+}
+
+.repeater-input {
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+.remove-repeater-item {
+    padding: 0 8px !important;
+    height: 30px !important;
+    line-height: 28px !important;
+    color: #cc1818 !important;
+    border-color: #cc1818 !important;
+}
+
+.remove-repeater-item:hover {
+    background: #cc1818 !important;
+    color: #fff !important;
+}
+
+.add-repeater-item {
+    margin-top: 10px !important;
+    background: #2271b1 !important;
+    color: #fff !important;
+    border-color: #2271b1 !important;
+}
+
+.add-repeater-item:hover {
+    background: #135e96 !important;
+}
+
+/* Estilos para el modal cuando se selecciona tipo repeater */
+.repeater-options {
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    margin-top: 15px;
+}
