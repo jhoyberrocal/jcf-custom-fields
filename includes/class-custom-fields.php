@@ -279,6 +279,10 @@ class JCF_Custom_Fields {
         }
         return get_post_meta($post_id, '_jcf_' . $field_slug, true);
     }
+
+	public static function get_field_term($field_slug, $term_id) {
+		return get_term_meta($term_id, '_jcf_' . $field_slug, true);
+	}
 }
 
 // Función global para obtener campos
@@ -286,4 +290,10 @@ if (!function_exists('get_field')) {
     function get_field($field_slug, $post_id = null) {
         return JCF_Custom_Fields::get_field($field_slug, $post_id);
     }
+}
+
+if (!function_exists('get_field_term')) {
+	function get_field_term($field_slug, $term_id) {
+		return JCF_Custom_Fields::get_field_term($field_slug, $term_id);
+	}
 }
